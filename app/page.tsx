@@ -11,8 +11,6 @@ export default function Home() {
     propertyAddress: "",
     purchasePrice: "",
     repairCost: "",
-    holdingCosts: "",
-    closingCosts: "",
     wholesaleFee: "",
     squareFeet: "",
     bedrooms: "",
