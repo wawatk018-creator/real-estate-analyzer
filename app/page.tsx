@@ -35,14 +35,19 @@ export default function Home() {
   };
 
   const handleCompChange = (
-    index: number,
-    field: string,
-    value: string
-  ) => {
-    const updated = [...comps];
-    updated[index][field] = value;
-    setComps(updated);
+  index: number,
+  field: "soldPrice" | "sqft",
+  value: string
+) => {
+  const updated = [...comps];
+
+  updated[index] = {
+    ...updated[index],
+    [field]: value,
   };
+
+  setComps(updated);
+};
 
   const avgSoldPrice =
     comps.reduce(
@@ -143,9 +148,7 @@ export default function Home() {
                   <div className="text-gray-400 text-sm mt-2">
                     Format: (123 Main Street, City, State/Zip)
                   </div>
-                </div>
-
-                {[
+                </div> {[
                   ["purchasePrice", "Purchase Price"],
                   ["repairCost", "Repair Cost"],
                   ["holdingCosts", "Holding Costs"],
@@ -263,9 +266,7 @@ export default function Home() {
 
                       <th className="p-4 border border-gray-700">
                         Sq Ft
-                      </th>
-
-                      <th className="p-4 border border-gray-700">
+                      </th> <th className="p-4 border border-gray-700">
                         Price/SqFt
                       </th>
 
@@ -392,9 +393,7 @@ export default function Home() {
                 <div className="bg-[#1e293b] p-6 rounded-2xl">
                   <div className="text-gray-400 mb-2">
                     Estimated ARV
-                  </div>
-
-                  <div className="text-3xl font-bold">
+                  </div> <div className="text-3xl font-bold">
                     {currency(estimatedARV)}
                   </div>
                 </div>
